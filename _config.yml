@@ -1,0 +1,29 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+gems:
+    - jekyll-gist
+    - jekyll-paginate
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            datreant
+tagline:          'persistent, pythonic trees for heterogeneous data'
+description:      'persistent, pythonic trees for heterogeneous data'
+url:              http://datreant.org
+baseurl:          /
+
+author:
+#  name:           'datreant development team'
+#  url:            
+
+paginate:         1
+
+# Custom vars
+#version:          2.1.0
+
+github:
+  repo:           https://github.com/datreant/datreant
+#  issues:         http:
