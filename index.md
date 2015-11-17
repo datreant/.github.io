@@ -34,14 +34,14 @@ and retrieval. It solves a boring problem, so we can focus on interesting ones.
 
 The core **datreant** package source is available under the BSD 3-clause license from
 [github.com/datreant](https://github.com/datreant). A release is forthcoming. The core
-package is provides fairly vanilla components, including the basic **Treant**
+package provides usable but fairly vanilla components, including the basic **Treant**
 object, which are meant to be adapted to more specialized, domain-specific roles
-elsewhere. 
+elsewhere.
 
 As an example, [**MDSynthesis**](https://github.com/datreant/MDSynthesis)
-provides **Treants** with functionality specific for working with molecular
-dynamics simulations. Addressing the problems of this domain is the original
-motivation for **datreant** development, though we welcome others!
+defines a subclass of **Treant** with functionality specific for working with
+molecular dynamics simulations. Addressing the problems of this domain is the
+original motivation for **datreant** development, though we welcome others!
 
 
 ## Participating
