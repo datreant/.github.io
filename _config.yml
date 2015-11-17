@@ -19,8 +19,6 @@ author:
 #  name:           'datreant development team'
 #  url:            
 
-paginate:         1
-
 # Custom vars
 #version:          2.1.0
 
