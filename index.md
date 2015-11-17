@@ -4,7 +4,7 @@ title: datreant
 ---
 #[**datreant**]({{site.baseurl}})
 is a project that seeks to make organic exploration and storage of
-complex scientific data easier to do. It is also a Python library build around
+complex scientific data easier to do. It is also a Python library built around
 **Treants**: Python objects that also have a persistent representation in the
 filesystem as directory trees, the fundamental data structure of scientific
 research.
