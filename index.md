@@ -4,59 +4,80 @@ title: datreant
 ---
 #[**datreant**]({{site.baseurl}})
 is a project that seeks to make organic exploration and storage of
-complex scientific data easier to do. It is also a Python library built around
-**Treants**: Python objects that also have a persistent representation in the
-filesystem as directory trees, the fundamental data structure of scientific
-research.
+complex scientific data easier to do. It is a Python library built around
+**Treants**: specially marked directories with distinguishing characteristics
+that can be discovered, queried, and filtered. Treants map the filesystem as
+it is into a Pythonic interface, making heterogeneous data easier to leverage
+while enhancing scientific reproducibility.
 
-
-## The problem
+## Why Treants?
 
 In many fields of science, especially those analyzing experimental or
-simulation data, there is often an existing ecosystem of specialized tools and 
-file formats which new tools must work around, for better or worse.
-Furthermore, centralized database solutions may be suboptimal for data
-storage for a number of reasons, including insufficient hardware
-infrastructure, variety and heterogeneity of raw data, the need for data
-portability, etc. This is particularly the case for fields centered around
-simulation: simulation systems can vary widely in size, composition, rules,
-paramaters, and starting conditions. And with increases in computational power,
-it is often necessary to store intermediate results obtained from large amounts
-of simulation data so it can be accessed and explored interactively.
+simulation data, there is an existing ecosystem of specialized tools and file
+formats which new tools must work around. Often this makes the filesystem serve
+as a *de facto* database, with directory trees the zeroth-order data structure
+for scientific data. But it can be tedious and error prone to work with these
+directory trees to retrieve and store heterogeneous datasets, especially over
+projects spanning years with no strict organizational scheme.
 
-These problems make data management difficult, and serve as a barrier to
-answering scientific questions. To make things easier, **datreant** seeks to
-address the tedious and time-consuming logistics of intermediate data storage
-and retrieval. It solves a boring problem, so we can focus on interesting ones.
+Treants make it easy to quickly gather datasets stored within many files in any
+format (CSV, HDF5, NetCDF, Feather, etc.) scattered throughout a filesystem,
+operate on these data, and store results again as necessary within the Treants'
+directory trees. **datreant** also provides Tree and Leaf classes for granular
+manipulation of individual directories and files, respectively, as well as
+Bundles and Views for working with aggregations of many Treants, Trees, and
+Leaves. Bundles in particular can filter Treants based on tags, and perform
+group-by operations on their categories. In this way, disparate datasets can be
+powerfully manipulated as meta-datasets of Treants. And because Treants are
+filesystem objects, they can be used alongside other tools, such as
+[dask.distributed](http://distributed.readthedocs.org/), to distill knowledge
+from data more effectively.
 
 
-## Availability
+## Getting datreant
 
-The core **datreant** package source is available under the BSD 3-clause license from
-[github.com/datreant](https://github.com/datreant). A release is forthcoming. The core
-package provides usable but fairly vanilla components, including the basic **Treant**
-object, which are meant to be adapted to more specialized, domain-specific roles
-elsewhere.
+**datreant** is a namespace package, with the core components available in the
+dependency-light [datreant.core](http://datreant.readthedocs.org/)
+module. All core datreant objects are extendable; an example of this is
+[datreant.data](http://datreantdata.readthedocs.org/), which provides a
+convenience interface for storing and retrieving `numpy` and `pandas` data
+structures in HDF5 using h5py and PyTables internally.
 
-As an example, [**MDSynthesis**](https://github.com/datreant/MDSynthesis)
-defines a subclass of **Treant** with functionality specific for working with
-molecular dynamics simulations. Addressing the problems of this domain is the
-original motivation for **datreant** development, though we welcome others!
+All current datreant subpackages are freely available under a BSD 3-clause
+license. See the [installation
+instructions](http://datreant.readthedocs.org/en/latest/install.html) to get
+set up.
+
+
+## Domain specificity
+
+**datreant** is also designed with specialized applications for data management
+in mind. For working with molecular dynamics (MD) simulation data,
+[**MDSynthesis**](http://mdsynthesis.readthedocs.org/)—built on top of
+datreant—streamlines workflow through **Sim** objects. **Sims** are special
+**Treants** that use [MDAnalysis](http://www.mdanalysis.org/) to dissect MD
+trajectories, providing mechanisms for storing system definitions and custom
+atom selections. This makes it possible to write maintainable analysis code
+that works across many simulation variants. Just as importantly, Sims allow
+rapid interactive work drawing from hundreds of simulations at once, making
+scientific questions easier to answer with less time and effort.
+
+Interested in building your own domain-specific package on top of datreant?
+Let us know on the [mailing list](http://groups.google.com/group/datreant)
+so we can help you get rolling!
 
 
 ## Participating
 
+**datreant** is an *open source* project and welcomes your contributions! All
+subpackages are openly developed on [GitHub](https://github.com/datreant),
+with issues and pull requests always welcome. Check out the [contributor's
+gude](http://datreant.readthedocs.org/en/latest/contributing.html) for help
+with getting started.
+
 Feel free to ask questions on the
-[datreant](http://groups.google.com/group/datreant) mailing list and join the
-discussion.
-
-Please report bugs or enhancement requests for the main package through the
-[issue tracker](https://github.com/datreant/datreant/issues). It is not
-an overstatement to say that issues drive a lot of development and 
-even the direction of the project!
-
-**datreant** is *open source* and welcomes *your* contributions! [Fork the repository
-on GitHub](https://github.com/datreant/datreant#fork-destination-box) and
-submit a pull request if you have additions you'd like to contribute back.
+[mailing list](http://groups.google.com/group/datreant) and join the
+discussion. This is a great place to get help, propose new ideas for datreant
+subpackages, and otherwise get involved with and help steer the project.
 
 <a href="https://github.com/datreant"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
