@@ -2,7 +2,8 @@
 layout: default
 title: datreant
 ---
-#[**datreant**]({{site.baseurl}})
+# [**datreant**]({{site.baseurl}})
+
 is a project that seeks to make organic exploration and storage of
 complex scientific data easier to do. It is a Python library built around
 **Treants**: specially marked directories with distinguishing characteristics
