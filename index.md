@@ -11,6 +11,13 @@ that can be discovered, queried, and filtered. Treants map the filesystem as
 it is into a Pythonic interface, making heterogeneous data easier to leverage
 while enhancing scientific reproducibility.
 
+See our recent publication in the [SciPy 2016
+proceedings](http://conference.scipy.org/proceedings/scipy2016),
+and consider citing **datreant**:
+
+* D. L. Dotson, S. L. Seyler, M. Linke, R. J. Gowers, O. Beckstein. [datreant: persistent, Pythonic trees for heterogeneous data](http://conference.scipy.org/proceedings/scipy2016/david_dotson.html). In S. Benthall and S. Rostrup, editors, *Proceedings of the 15th Python in Science Conference*, pages 51-56, Austin, TX, 2016. SciPy.
+
+
 ## Why Treants?
 
 In many fields of science, especially those analyzing experimental or
