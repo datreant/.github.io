@@ -17,6 +17,10 @@ and consider citing **datreant**:
 
 * D. L. Dotson, S. L. Seyler, M. Linke, R. J. Gowers, O. Beckstein. [datreant: persistent, Pythonic trees for heterogeneous data](http://conference.scipy.org/proceedings/scipy2016/david_dotson.html). In S. Benthall and S. Rostrup, editors, *Proceedings of the 15th Python in Science Conference*, pages 51-56, Austin, TX, 2016. SciPy.
 
+Also have a look at the brief, 20-minute overview of **datreant** given by
+[David Dotson](https://github.com/dotsdl) at [SciPy 2016](http://scipy2016.scipy.org/):
+
+<iframe width="700" height="395" src="http://www.youtube.com/embed/enLHDZoch0U" frameborder="0" allowfullscreen></iframe>
 
 ## Why Treants?
 
