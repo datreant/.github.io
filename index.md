@@ -80,7 +80,7 @@ so we can help you get rolling!
 **datreant** is an *open source* project and welcomes your contributions! All
 subpackages are openly developed on [GitHub](https://github.com/datreant),
 with issues and pull requests always welcome. Check out the [contributor's
-gude](http://datreant.readthedocs.org/en/latest/contributing.html) for help
+guide](http://datreant.readthedocs.org/en/latest/contributing.html) for help
 with getting started.
 
 Feel free to ask questions on the
