@@ -13,6 +13,7 @@ tagline:          'persistent, pythonic trees for heterogeneous data'
 description:      'persistent, pythonic trees for heterogeneous data'
 url:              http://datreant.org
 baseurl:          /
+blog:             /blog/
 
 author:
 #  name:           'datreant development team'
@@ -20,6 +21,10 @@ author:
 
 # Custom vars
 #version:          2.1.0
+#
+# Blog pagination
+paginate_path:   "/blog/page:num/"
+paginate:        3
 
 docs:
   core:           http://datreant.readthedocs.org/
