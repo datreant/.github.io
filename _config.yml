@@ -3,6 +3,7 @@ highlighter:      rouge
 gems:
     - jekyll-gist
     - jekyll-paginate
+    - jekyll-mentions
 
 # Permalinks
 permalink:        pretty
