@@ -15,15 +15,18 @@ This post is meant to summarize what's coming, and why.
 
 The biggest change came in [Issue #145](https://github.com/datreant/datreant.core/pull/145).
 A directory is now marked as a Treant if it contains a `.datreant` directory.
-There are no UUIDs, which could be trouble when copying Treants around.
+There are no UUIDs, which were trouble when copying Treants around.
 Tags and categories are stored individually in their own files in this directory, improving performance when either becomes large.
 This change also makes the `discover` machinery more easily able to find Treants, improving its performance as well.
 
 `datreant` is also no longer a namespace package, and "limbs" have been elminated as a concept.
-The original idea we had when we began was that custom limbs, such as that provided by `datreant.data`, could be written and attached to Treants for new functionality.
-These could be provided by other packages within the `datreant` namespace, but developed and packaged separately so dependencies of core wouldn't become bloated.
+The original idea we had when we began was that custom limbs, such as those provided by `datreant.data`, could be written and attached to Treants for new functionality.
+These could be provided by other packages within the `datreant` namespace, but developed and packaged separately so the dependencies of core wouldn't become bloated.
 This functionality, however, was difficult to maintain, and writing new limbs wasn't actually easy to do.
 What's more, building a CLI interface for Treants was confounded by this complexity.
+
+Packages such as `datreant.data` are now deprecated, and `datreant.core` is simply known as `datreant`.
+We believe this change will be a bit painful to users upfront, but long-term allow `datreant` to continue to improve in predictable ways.
 
 ## Apologies in advance
 
