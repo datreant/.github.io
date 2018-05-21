@@ -16,8 +16,9 @@ This post is meant to summarize what's coming, and why.
 The biggest change came in [Issue #145](https://github.com/datreant/datreant.core/pull/145).
 A directory is now marked as a Treant if it contains a `.datreant` directory.
 There are no UUIDs, which were trouble when copying Treants around.
-Tags and categories are stored individually in their own files in this directory, improving performance when either becomes large.
-This change also makes the `discover` machinery more easily able to find Treants, improving its performance as well.
+Tags and Categories are stored individually in their own files in this directory, improving performance when either becomes large.
+This change also makes the `discover` machinery more easily able to find Treants,
+improving its performance greatly after this was identified as a bottleneck for larger Treant collections.
 
 `datreant` is also no longer a namespace package, and "limbs" have been elminated as a concept.
 The original idea we had when we began was that custom limbs, such as those provided by `datreant.data`, could be written and attached to Treants for new functionality.
@@ -38,6 +39,9 @@ We don't have the bandwidth to do everything the way we want to.
 
 With that, we're releasing `datreant` 0.8.0 in the next few days, with a package on PyPI shortly after.
 Please uninstall all `datreant.*` packages from your environment before installing this, as the reversion from a namespace package will lead to unexpected behavior otherwise.
+
+If you are running existing projects using `datreant` and don't want to be affected by these changes
+we recommend that you pin your dependency to version 0.7.1.
 
 ## Enjoy
 
