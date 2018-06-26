@@ -13,7 +13,7 @@ title:            datreant
 tagline:          'persistent, pythonic trees for heterogeneous data'
 description:      'persistent, pythonic trees for heterogeneous data'
 url:              http://datreant.org
-baseurl:          /
+baseurl:
 blog:             /blog
 
 author:
