@@ -5,7 +5,7 @@ title: datreant downsizing
 ---
 
 The first commit of what became `datreant` occurred over four years ago, and in the course of its development it's seen many iterations on what it is and how it works.
-The library didn't even start life as `datreant`: MDSynthesis was born first, with `datreant` becoming a more general library for handling datasets dispersed across a filesystem.
+The library didn't even start life as `datreant`: [MDSynthesis](https://github.com/datreant/MDSynthesis) was born first, with `datreant` becoming a more general library for handling datasets dispersed across a filesystem.
 
 As is often the case with building software, you only really understand what works well and what doesn't by trying something first.
 With so much history, `datreant` is finally arriving at a place of stability.
@@ -37,11 +37,29 @@ None of our changes would be a huge disruption to users, and we'd do everything 
 But this project is small, with ~3 developers spending a few extra minutes on it every month.
 We don't have the bandwidth to do everything the way we want to.
 
-With that, we're releasing `datreant` 0.8.0 in the next few days, with a package on PyPI shortly after.
+With that, we're releasing `datreant` 1.0 in the next few days, with a package on PyPI shortly after.
 Please uninstall all `datreant.*` packages from your environment before installing this, as the reversion from a namespace package will lead to unexpected behavior otherwise.
 
-If you are running existing projects using `datreant` and don't want to be affected by these changes
+If you are running existing projects using `datreant` and don't want to be affected by these changes,
 we recommend that you pin your dependency to version 0.7.1.
+
+## For MDSynthesis users
+
+We are also releasing MDSynthesis 1.0 to coincide with the `datreant` 1.0 release.
+Changes to MDSynthesis include use of the new Treant structure, improving overall performance.
+We've also directly merged in the `datreant.data` functionality, so this will still be available to MDSynthesis users by way of the `Sim` object.
+
+## Migrating existing Treants
+
+If you have loads of existing Treants in the old format, you can convert them to the 1.0 style with the `datreant_07to1.py` script provided with the installation.
+If you've been using MDSynthesis, and likewise have many Sims lying about, there is a similar script, `mds_06to1.py`, which will ship with the 1.0 release of that package.
+
+As for adapting your code to the new changes, please have a look at the [CHANGELOG](https://github.com/datreant/datreant/blob/develop/CHANGELOG) for the list of API changes accompanying this release.
+One major item: UUIDs no longer exist, so you'll need to develop a workaround for any code that relies on these.
+We recommend using the absolute path of a Treant as a unique identifier, or otherwise giving your Treants their own UUIDs as a category `(key: value)` pair.
+
+We don't anticipate as many breaking changes in the future.
+Thanks for bearing with us.
 
 ## Enjoy
 
