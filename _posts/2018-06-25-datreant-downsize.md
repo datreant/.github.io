@@ -20,7 +20,7 @@ Tags and Categories are stored individually in their own files in this directory
 This change also makes the `discover` machinery more easily able to find Treants,
 improving its performance greatly after this was identified as a bottleneck for larger Treant collections.
 
-`datreant` is also no longer a namespace package, and "limbs" have been elminated as a concept.
+`datreant` is also no longer a namespace package, and "limbs" have been eliminated as a concept.
 The original idea we had when we began was that custom limbs, such as those provided by `datreant.data`, could be written and attached to Treants for new functionality.
 These could be provided by other packages within the `datreant` namespace, but developed and packaged separately so the dependencies of core wouldn't become bloated.
 This functionality, however, was difficult to maintain, and writing new limbs wasn't actually easy to do.
